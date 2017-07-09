@@ -48,8 +48,10 @@
         function getUser(mUserId){
             var user;
             user = vm.userData.find(function(user){
-                return user.userId = mUserId;
+                return user.id === mUserId;
             });
+            console.log(mUserId)
+            console.log(user)
             return user;
         }
 
