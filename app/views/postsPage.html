@@ -1,2 +1,12 @@
 thid is the posts page
+
+
+<div class="resultsSection">
+    <div ng-repeat="post in $ctrl.postData">
+        <posts-component post="post" test="item.firstName"></posts-component>
+    </div>
+</div>
+
+
+
 <div ui-view>ui view</div>

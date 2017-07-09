@@ -26,11 +26,14 @@
         
         function activate(){
             posts().then(users).then(function(){
-                console.log(vm.postData);
-                console.log(vm.userData);
+                // console.log(vm.postData);
+                // console.log(vm.userData);
                 combineData();
-                alphabetical()
+                alphabetical();
+                console.log(vm.postData);
             });
+
+            
         }
 
         function posts(){
@@ -50,8 +53,8 @@
             user = vm.userData.find(function(user){
                 return user.id === mUserId;
             });
-            console.log(mUserId)
-            console.log(user)
+            // console.log(mUserId)
+            // console.log(user)
             return user;
         }
 

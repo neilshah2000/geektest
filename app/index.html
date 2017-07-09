@@ -19,21 +19,16 @@
 
 <body>
 <div ng-app="GeekSample">
-    <div ng-controller="PostsPageController as vm">
+    <!--<div ng-controller="PostsPageController as vm">-->
 
-        <div ui-view>ui view</div>
+        
 
 
         <div class="sortSection">
             Sort:
             <button class="btn-default" ng-click="vm.alphabetical()">alphabetical</button>
-            <button class="btn-default" ng-click="vm.recomended()">recomended</button>
         </div>
-        <div class="resultsSection">
-            <div ng-repeat="post in vm.postData">
-                <posts-component post="post" test="item.firstName"></posts-component>
-            </div>
-        </div>
+        <div ui-view>ui view</div>
     </div>
 </div>
 </body>

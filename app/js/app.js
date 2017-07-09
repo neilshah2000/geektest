@@ -13,14 +13,16 @@
     
     angular.module('GeekSample').config(function($stateProvider, $urlRouterProvider) {
 
-        $urlRouterProvider.otherwise('/posts');
+        $urlRouterProvider.otherwise('/');
 
         $stateProvider
 
             // HOME STATES AND NESTED VIEWS ========================================
             .state('posts', {
                 url: '/posts',
-                templateUrl: 'views/postsPage.html'
+                templateUrl: 'views/postsPage.html',
+                controller: 'PostsPageController',
+                controllerAs: '$ctrl'
             })
 
             // ABOUT PAGE AND MULTIPLE NAMED VIEWS =================================
