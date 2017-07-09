@@ -1,23 +1,13 @@
 <div class="venueTile col-md-4">
-    <a href="{{$ctrl.post.user.email}}">send email</a>
     <h2>{{$ctrl.post.title}}</h2>
-    user
-    {{$ctrl.post}}
+    
 
-
-
-
-
-    <div class="venueHeading">
-        <h2>
-            <a href="{{ $ctrl.venue.venue.url }}">{{ $ctrl.venue.venue.name }}</a>
-        </h2>
+    <a ng-click="$ctrl.showComment = !$ctrl.showComment">Show/Hide Comments</a>
+    <div ng-show="$ctrl.showComment">
+        {{$ctrl.post.body}}
     </div>
-    <div class="image">
-        <img ng-src="{{$ctrl.getImageUrl($ctrl.venue.venue.photos)}}" alt=" {{$ctrl.venue.venue.name}} image" />
-    </div>
-    <div class="detail">
-        <p>{{ $ctrl.venue.tips[0].text }}</p>
-        <p>{{ $ctrl.venue.venue.rating }}</p>
-    </div>
+
+    <h4>{{$ctrl.post.user.name}}</h4>
+    <a href="{{$ctrl.post.user.email}}">send email</a>
+
 </div>
