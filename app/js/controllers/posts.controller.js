@@ -14,10 +14,8 @@
         //////////
 
         function getImageUrl(photoData){
-            var size = '100x100',
-                photoItem = photoData.groups[0].items[0],
-                url = photoItem.prefix + size + photoItem.suffix;
-            return url;
+
+            return 'url';
         }
 
         function onInit(){

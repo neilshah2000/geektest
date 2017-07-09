@@ -10,8 +10,10 @@
     function PostsPageController(DataService) {
         var vm = this;
   
-        vm.posts = [];
+        vm.postData = [];
+        vm.userData = [];
         vm.posts = posts;
+        vm.users = users;
 
         vm.alphabetical = alphabetical;
         vm.recomended = recomended;
@@ -24,14 +26,38 @@
         ///////////////////
         
         function activate(){
-            posts();
+            posts().then(users).then(function(){
+                console.log(vm.postData);
+                console.log(vm.userData);
+            })
         }
 
         function posts(){
-            DataService.getPosts().then(function(data){
-                vm.posts = data;
-                console.log(data);
-            })
+            // DataService.getPosts().then(function(data){
+            //     vm.posts = data;
+            //     console.log(data);
+            // })
+            return DataService.getPosts().then(function(data){
+                vm.postData = data;
+            });
+        }
+
+        function users(){
+            // DataService.getUsers().then(function(data){
+            //     vm.users = data;
+            //     console.log(vm.users);
+            // });
+            return DataService.getUsers().then(function(data){
+                vm.userData = data;
+            });
+        }
+
+        function getUser(mUserId){
+            var user;
+            user = vm.users.find(function(user){
+                return user.userId = mUserId;
+            });
+            return user;
         }
 
         function alphabetical(){
