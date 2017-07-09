@@ -1,0 +1,36 @@
+$font-stack:    Helvetica, sans-serif;
+$primary-color: blue;
+$secondary-colour: black;
+
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+  width: 100%;
+  
+}
+
+.searchSection{
+  display: flex;
+  justify-content: center;
+  .searchForm{
+    width: 200px;
+  }
+}
+
+.sortSection{
+  height: 50px;
+}
+
+.resultsSection{
+  color: $secondary-colour;
+  .venueTile{
+    box-shadow: 1px 1px 10px 0px rgba(50, 50, 50, 0.62);
+    height: 300px;
+
+    .detail{
+      font-size: small;
+      padding-top: 10px;
+    }
+  }
+}
